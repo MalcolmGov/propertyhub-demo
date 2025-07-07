@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyHub Demo - Next-Generation Real Estate Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1a202c;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .property24-logo {
+            display: inline-flex;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .property24-logo .blue-part {
+            background: #0066cc;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-right: 4px;
+        }
+
+        .property24-logo .red-part {
+            background: #dc2626;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .demo-url {
+            background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .demo-url a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-url a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h3 {
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .property24-logo {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .demo-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="property24-logo">
+            <span class="blue-part">property</span>
+            <span class="red-part">24</span>
+        </div>
+        <h1 style="font-size: 2.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">PropertyHub Platform</h1>
+        <p style="font-size: 1.2rem; color: #4a5568;">Next-Generation Real Estate Technology Solutions</p>
+    </div>
+
+    <div class="container">
+        <div class="demo-section">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #1a202c;">🚀 Live Demo Platform</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; color: #4a5568;">
+                Experience PropertyHub's advanced features with authentic South African property data and Property24 branding
+            </p>
+            
+            <div class="demo-url">
+                <p style="margin-bottom: 15px; font-size: 1rem; opacity: 0.9;">Access Full Demo Platform:</p>
+                <a href="https://7471d8d3-559e-4e14-befc-5004ace8138a-00-4mbsgg6vx5zt.worf.replit.dev" target="_blank">
+                    Launch PropertyHub Demo →
+                </a>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                    Full-featured platform with AI search, admin dashboard, and integrated tools
+                </p>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🤖 AI-Powered Search</h3>
+                <p>Natural language property search with voice recognition. Ask "Find me a family home under R3M in Centurion" and get instant, intelligent results.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🏠 Smart Property Valuation</h3>
+                <p>Real-time property valuations using machine learning algorithms. Live market updates with percentage changes and trend indicators.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📊 Advanced Admin Dashboard</h3>
+                <p>Comprehensive property management with sales performance tracking, agent leaderboards, and detailed analytics for business intelligence.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌐 Virtual Reality Tours</h3>
+                <p>Immersive AR property tours with ambient sound experiences. Explore properties room-by-room with realistic audio environments.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📱 WhatsApp Integration</h3>
+                <p>Direct property inquiries through WhatsApp Business API. Instant communication with pre-filled property details for immediate follow-up.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📄 Automated Reports</h3>
+                <p>Professional property reports with market analysis, comparable sales, and municipal valuations. Generate comprehensive reports instantly.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔗 Third-Party Integrations</h3>
+                <p>Connect with Google Analytics, Facebook Lead Ads, email marketing platforms, and CRM systems for comprehensive business automation.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎨 Multi-Brand Support</h3>
+                <p>White-label platform supporting multiple South African real estate brands with authentic logos, colors, and customized experiences.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3 style="font-size: 2rem; margin-bottom: 20px;">Ready to Transform Your Real Estate Business?</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
+                PropertyHub represents the future of real estate technology. Explore the full demo to see how we can enhance Property24's digital experience.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>📧 Email Contact</h4>
+                    <p>propertyhub@business.co.za</p>
+                </div>
+                <div class="contact-card">
+                    <h4>📱 WhatsApp Demo</h4>
+                    <p>+27 XX XXX XXXX</p>
+                </div>
+                <div class="contact-card">
+                    <h4>💻 GitHub Repository</h4>
+                    <p>github.com/propertyhub/demo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate feature cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Apply animation to feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Track demo link clicks
+            document.querySelector('.demo-url a').addEventListener('click', function() {
+                console.log('PropertyHub Demo accessed from GitHub Pages');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyHub Platform - Executive Presentation for Property24</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1a202c;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .property24-logo {
+            display: inline-flex;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .property24-logo .blue-part {
+            background: #0066cc;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-right: 4px;
+        }
+
+        .property24-logo .red-part {
+            background: #dc2626;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .slide-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0066cc;
+        }
+
+        .slide-number {
+            background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 20px;
+        }
+
+        .slide-title {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .comparison-column {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .comparison-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .property24-column h3 {
+            background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%);
+            color: white;
+        }
+
+        .propertyhub-column h3 {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .demo-section {
+            background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .demo-url {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .demo-url a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .demo-url a:hover {
+            text-decoration: underline;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-category {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-category h4 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: #1a202c;
+        }
+
+        .feature-category .emoji {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .feature-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-category li {
+            padding: 8px 0;
+            color: #4a5568;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-category li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-top: 2px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .advantage-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="property24-logo">
+                <span class="blue-part">property</span>
+                <span class="red-part">24</span>
+            </div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">PropertyHub Platform</h1>
+            <p style="font-size: 1.2rem; color: #4a5568;">Next-Generation Real Estate Technology Solutions</p>
+            <p style="font-size: 1rem; color: #6b7280; margin-top: 10px;">Executive Presentation - January 2025</p>
+        </div>
+
+        <!-- Slide 1: Feature Comparison -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">1</div>
+                <div class="slide-title">PropertyHub vs Property24 - Feature Comparison</div>
+            </div>
+            
+            <style>
+                .comparison-table {
+                    background: white;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                    border: 1px solid #e2e8f0;
+                    margin-top: 30px;
+                }
+                
+                .table-header {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                }
+                
+                .header-cell {
+                    padding: 20px;
+                    text-align: center;
+                    border-right: 1px solid rgba(255, 255, 255, 0.2);
+                }
+                
+                .header-cell:last-child {
+                    border-right: none;
+                }
+                
+                .category-row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    border-bottom: 1px solid #e2e8f0;
+                }
+                
+                .category-header {
+                    background: #f8fafc;
+                    padding: 15px;
+                    font-weight: bold;
+                    color: #1a202c;
+                    border-right: 1px solid #e2e8f0;
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .category-icon {
+                    margin-right: 10px;
+                    font-size: 1.2rem;
+                }
+                
+                .feature-cell {
+                    padding: 15px;
+                    border-right: 1px solid #e2e8f0;
+                    vertical-align: top;
+                }
+                
+                .feature-cell:last-child {
+                    border-right: none;
+                }
+                
+                .propertyhub-cell {
+                    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+                }
+                
+                .property24-cell {
+                    background: linear-gradient(135deg, #fef3c7 0%, #fef7cd 100%);
+                }
+                
+                .feature-item {
+                    display: flex;
+                    align-items: flex-start;
+                    margin-bottom: 8px;
+                    font-size: 0.9rem;
+                }
+                
+                .feature-item:last-child {
+                    margin-bottom: 0;
+                }
+                
+                .feature-status {
+                    margin-right: 8px;
+                    font-size: 1rem;
+                    margin-top: 1px;
+                }
+                
+                .disruptive-badge {
+                    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-size: 0.7rem;
+                    font-weight: bold;
+                    margin-left: 8px;
+                }
+                
+                .gap-badge {
+                    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-size: 0.7rem;
+                    font-weight: bold;
+                    margin-left: 8px;
+                }
+                
+                .major-gap {
+                    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-size: 0.7rem;
+                    font-weight: bold;
+                    margin-left: 8px;
+                }
+            </style>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-cell">Feature Category</div>
+                    <div class="header-cell">PropertyHub (Next-Gen)</div>
+                    <div class="header-cell">Property24 (Traditional)</div>
+                </div>
+                
+                <!-- AI & Machine Learning Category -->
+                <div class="category-row">
+                    <div class="category-header">
+                        <span class="category-icon">🤖</span>
+                        Artificial Intelligence & Machine Learning
+                    </div>
+                    <div class="feature-cell propertyhub-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>AI-Powered Real-Time Analysis</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Machine learning property valuation<br>
+                                    • Market positioning insights<br>
+                                    • Price confidence scoring
+                                </div>
+                                <span class="disruptive-badge">DISRUPTIVE</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Natural Language Processing</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Conversational search queries<br>
+                                    • Context-aware recommendations<br>
+                                    • Predictive search suggestions
+                                </div>
+                                <span class="disruptive-badge">DISRUPTIVE</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Predictive Analytics</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Conversion probability scoring<br>
+                                    • Automated priority ranking<br>
+                                    • Behavioral pattern analysis
+                                </div>
+                                <span class="disruptive-badge">DISRUPTIVE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-cell property24-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">❌</span>
+                            <div>
+                                <strong>Basic Price Listings</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Static price displays<br>
+                                    • No valuation analysis<br>
+                                    • Manual price research required
+                                </div>
+                                <span class="major-gap">MAJOR GAP</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">⚠️</span>
+                            <div>
+                                <strong>Traditional Filter-Based</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Basic dropdown filters<br>
+                                    • Keyword matching only<br>
+                                    • Limited search intelligence
+                                </div>
+                                <span class="gap-badge">TECHNOLOGY GAP</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">❌</span>
+                            <div>
+                                <strong>Manual Lead Management</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Basic contact collection<br>
+                                    • No scoring system<br>
+                                    • Manual prioritization required
+                                </div>
+                                <span class="major-gap">MAJOR GAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- User Experience Category -->
+                <div class="category-row">
+                    <div class="category-header">
+                        <span class="category-icon">🎨</span>
+                        User Experience & Interface Design
+                    </div>
+                    <div class="feature-cell propertyhub-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Animated Interactive Experience</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Hover animations & micro-interactions<br>
+                                    • 25% larger high-quality images<br>
+                                    • Smart overlay information
+                                </div>
+                                <span class="disruptive-badge">SUPERIOR UX</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Modern Aqua Marine Theme</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Distinctive gradient branding<br>
+                                    • Professional status tagging<br>
+                                    • Optimized visual hierarchy
+                                </div>
+                                <span class="disruptive-badge">BRAND DIFFERENTIATION</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-cell property24-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">⚠️</span>
+                            <div>
+                                <strong>Static Traditional Cards</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Basic property thumbnails<br>
+                                    • Limited visual engagement<br>
+                                    • Standard grid layout
+                                </div>
+                                <span class="gap-badge">UX GAP</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">⚠️</span>
+                            <div>
+                                <strong>Traditional Corporate Design</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Standard blue/white theme<br>
+                                    • Conventional layout patterns<br>
+                                    • Limited visual innovation
+                                </div>
+                                <span class="gap-badge">DESIGN GAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Communication & Engagement Category -->
+                <div class="category-row">
+                    <div class="category-header">
+                        <span class="category-icon">💬</span>
+                        Communication & User Engagement
+                    </div>
+                    <div class="feature-cell propertyhub-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Multi-Channel Integration</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • WhatsApp Business API<br>
+                                    • Voice recognition commands<br>
+                                    • AI chatbot assistance
+                                </div>
+                                <span class="disruptive-badge">OMNICHANNEL</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Real-Time Notifications</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Instant lead alerts<br>
+                                    • Property update notifications<br>
+                                    • Automated follow-up sequences
+                                </div>
+                                <span class="disruptive-badge">INSTANT RESPONSE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-cell property24-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">⚠️</span>
+                            <div>
+                                <strong>Traditional Contact Forms</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Email-based inquiries<br>
+                                    • Phone number displays<br>
+                                    • Basic contact collection
+                                </div>
+                                <span class="gap-badge">ENGAGEMENT GAP</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">⚠️</span>
+                            <div>
+                                <strong>Manual Communication</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Email notifications only<br>
+                                    • No real-time updates<br>
+                                    • Limited automation
+                                </div>
+                                <span class="gap-badge">AUTOMATION GAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics & Business Intelligence Category -->
+                <div class="category-row">
+                    <div class="category-header">
+                        <span class="category-icon">📊</span>
+                        Analytics & Business Intelligence
+                    </div>
+                    <div class="feature-cell propertyhub-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Advanced Analytics Dashboard</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Sales performance tracking<br>
+                                    • Agent leaderboards & rankings<br>
+                                    • Conversion rate optimization
+                                </div>
+                                <span class="disruptive-badge">DATA-DRIVEN</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Automated Report Generation</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Property valuation reports<br>
+                                    • Market analysis documents<br>
+                                    • Comparable sales data
+                                </div>
+                                <span class="disruptive-badge">AUTOMATION</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-cell property24-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">❌</span>
+                            <div>
+                                <strong>Basic Listing Management</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Simple property uploads<br>
+                                    • No performance tracking<br>
+                                    • Limited analytics insights
+                                </div>
+                                <span class="major-gap">ANALYTICS GAP</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">❌</span>
+                            <div>
+                                <strong>Manual Reporting</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • No automated reports<br>
+                                    • Basic property information<br>
+                                    • Manual data compilation
+                                </div>
+                                <span class="major-gap">REPORTING GAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technology Integration Category -->
+                <div class="category-row">
+                    <div class="category-header">
+                        <span class="category-icon">🔗</span>
+                        Technology Integration & Innovation
+                    </div>
+                    <div class="feature-cell propertyhub-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Virtual & Augmented Reality</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • AR property tours with ambient sound<br>
+                                    • Virtual staging capabilities<br>
+                                    • 360° immersive experiences
+                                </div>
+                                <span class="disruptive-badge">CUTTING-EDGE</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">✅</span>
+                            <div>
+                                <strong>Third-Party Integrations</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Google Analytics integration<br>
+                                    • CRM system connections<br>
+                                    • Marketing automation tools
+                                </div>
+                                <span class="disruptive-badge">ECOSYSTEM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-cell property24-cell">
+                        <div class="feature-item">
+                            <span class="feature-status">❌</span>
+                            <div>
+                                <strong>Traditional Photo Galleries</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Static image carousels<br>
+                                    • No immersive experiences<br>
+                                    • Limited visual technology
+                                </div>
+                                <span class="major-gap">INNOVATION GAP</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-status">⚠️</span>
+                            <div>
+                                <strong>Limited Integration Ecosystem</strong>
+                                <div style="font-size: 0.8rem; color: #4a5568; margin-top: 2px;">
+                                    • Basic third-party connections<br>
+                                    • Manual data synchronization<br>
+                                    • Siloed system approach
+                                </div>
+                                <span class="gap-badge">INTEGRATION GAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Live Demo -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">2</div>
+                <div class="slide-title">Live Platform Demo</div>
+            </div>
+            
+            <div class="demo-section">
+                <h3 style="font-size: 2rem; margin-bottom: 20px;">🚀 Experience PropertyHub Live</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Access the full-featured demo platform with authentic Property24 branding and South African property data</p>
+                
+                <div class="demo-url">
+                    <p style="margin-bottom: 10px; font-size: 1rem; opacity: 0.9;">Demo Platform URL:</p>
+                    <a href="https://MalcolmGov.github.io/propertyhub-demo" target="_blank">
+                        https://MalcolmGov.github.io/propertyhub-demo
+                    </a>
+                    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                        Professional GitHub Pages deployment with clean URL
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+                    <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 10px; border: 2px solid rgba(255, 255, 255, 0.3);">
+                        <h4>🏠 Property Browsing</h4>
+                        <p>Interactive property cards with South African listings</p>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 10px; border: 2px solid rgba(255, 255, 255, 0.3);">
+                        <h4>🤖 AI Search</h4>
+                        <p>Natural language property search with voice commands</p>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 10px; border: 2px solid rgba(255, 255, 255, 0.3);">
+                        <h4>🎯 Admin Dashboard</h4>
+                        <p>Complete property management and analytics suite</p>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 10px; border: 2px solid rgba(255, 255, 255, 0.3);">
+                        <h4>📊 Reports System</h4>
+                        <p>Professional property reports with market analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Advanced Features -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-number">3</div>
+                <div class="slide-title">Advanced Features Roadmap</div>
+            </div>
+            
+            <p style="font-size: 1.2rem; margin-bottom: 30px; text-align: center; color: #4a5568;">
+                The following advanced features can be implemented based on Property24's requirements and strategic priorities
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-category">
+                    <h4><span class="emoji">🤖</span> AI & Machine Learning</h4>
+                    <ul>
+                        <li>AI Property Photographer - Automatically enhance property photos with lighting, staging, and virtual furniture</li>
+                        <li>Predictive Market Analytics - AI forecasting for property values, market trends, and investment opportunities</li>
+                        <li>Smart Lead Scoring - AI-powered lead qualification with behavioral analysis and conversion probability</li>
+                        <li>Automated Property Descriptions - Generate compelling property listings from photos and basic details</li>
+                        <li>Voice Search & Commands - Natural language voice interface for property searches and admin tasks</li>
+                        <li>AI Chatbot with Appointment Scheduling - Intelligent assistant that can book viewings and answer complex queries</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">🏡</span> Virtual & Augmented Reality</h4>
+                    <ul>
+                        <li>3D Property Scanner - Convert 2D photos into immersive 3D walkthroughs</li>
+                        <li>Virtual Staging - Add furniture and decor to empty properties in real-time</li>
+                        <li>Neighborhood AR Explorer - Overlay local amenities, schools, and services using phone camera</li>
+                        <li>Virtual Property Builder - Design and visualize property modifications before purchase</li>
+                        <li>360° Street View Integration - Seamless Google Street View integration with property tours</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">📊</span> Advanced Analytics & Insights</h4>
+                    <ul>
+                        <li>Market Heatmaps - Interactive maps showing price trends, demand, and investment hotspots</li>
+                        <li>Comparable Property Analysis - AI-powered property comparisons with detailed market insights</li>
+                        <li>Investment ROI Calculator - Comprehensive financial modeling for property investments</li>
+                        <li>Demographic Analytics - Detailed neighborhood demographics and lifestyle insights</li>
+                        <li>Price Prediction Engine - Machine learning predictions for future property values</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">🔗</span> Smart Integrations & Automation</h4>
+                    <ul>
+                        <li>Blockchain Property Verification - Secure property history and ownership verification</li>
+                        <li>Smart Contract Integration - Automated property transactions and escrow management</li>
+                        <li>IoT Property Monitoring - Real-time property condition monitoring and alerts</li>
+                        <li>Automated Marketing Campaigns - AI-driven personalized marketing for different buyer segments</li>
+                        <li>CRM Integration Hub - Deep integration with Salesforce, HubSpot, and other CRM systems</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">💰</span> FinTech & Payment Solutions</h4>
+                    <ul>
+                        <li>Instant Mortgage Pre-approval - Real-time mortgage qualification with banking partners</li>
+                        <li>Fractional Property Investment - Platform for shared property ownership and investment</li>
+                        <li>Cryptocurrency Payment Gateway - Accept Bitcoin, Ethereum, and other cryptocurrencies</li>
+                        <li>Dynamic Pricing Engine - Real-time price adjustments based on market conditions</li>
+                        <li>Rental Yield Calculator - Advanced rental income projections and analysis</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">🎯</span> Personalization & User Experience</h4>
+                    <ul>
+                        <li>AI-Powered Property Recommendations - Netflix-style property suggestions based on behavior</li>
+                        <li>Customizable Agent Portals - White-label solutions for individual agents and agencies</li>
+                        <li>Advanced Search Filters - Natural language search with complex criteria combinations</li>
+                        <li>Saved Search Alerts - Real-time notifications for properties matching specific criteria</li>
+                        <li>Social Property Sharing - Social media integration for property sharing and referrals</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">📱</span> Mobile & Communication</h4>
+                    <ul>
+                        <li>Progressive Web App - Native mobile app experience without app store downloads</li>
+                        <li>WhatsApp Business API - Automated property inquiries and appointment scheduling</li>
+                        <li>Video Call Integration - Virtual property viewings with screen sharing capabilities</li>
+                        <li>SMS Marketing Automation - Targeted SMS campaigns for property updates and alerts</li>
+                        <li>Multi-language Support - Support for multiple South African languages</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">🔒</span> Security & Compliance</h4>
+                    <ul>
+                        <li>Digital Identity Verification - Secure buyer and seller verification with document scanning</li>
+                        <li>GDPR Compliance Dashboard - Privacy management and data protection tools</li>
+                        <li>Audit Trail System - Complete transaction history and compliance reporting</li>
+                        <li>Secure Document Management - Encrypted storage and sharing of property documents</li>
+                        <li>Anti-fraud Detection - AI-powered fraud detection and prevention</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">🏢</span> Enterprise & B2B Features</h4>
+                    <ul>
+                        <li>Multi-brand Management - Manage multiple real estate brands from single dashboard</li>
+                        <li>Agent Performance Analytics - Comprehensive sales performance tracking and coaching</li>
+                        <li>Lead Distribution Engine - Intelligent lead routing based on agent expertise and availability</li>
+                        <li>White-label Solutions - Complete platform customization for different real estate companies</li>
+                        <li>API Marketplace - Open API for third-party developers and integrations</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h4><span class="emoji">🎨</span> Visual & Interactive Features</h4>
+                    <ul>
+                        <li>Interactive Floor Plans - Clickable floor plans with room details and measurements</li>
+                        <li>Before/After Renovation Visualizer - AI-powered renovation previews and cost estimates</li>
+                        <li>Drone Photography Integration - Aerial property photography and video tours</li>
+                        <li>Time-lapse Property History - Visual timeline of property changes and improvements</li>
+                        <li>Advanced Property Comparison Tool - Side-by-side property comparison with interactive features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h3>Ready to Transform Property24's Digital Experience?</h3>
+            <p>PropertyHub represents the future of real estate technology - let's discuss how we can customize this platform to exceed Property24's strategic objectives and market leadership goals.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p>contact@propertyhub.co.za</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📱 WhatsApp</h4>
+                    <p>+27 XX XXX XXXX</p>
+                </div>
+                <div class="contact-item">
+                    <h4>💻 Demo Platform</h4>
+                    <p>MalcolmGov.github.io/propertyhub-demo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for better presentation experience
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effects for feature categories
+        document.querySelectorAll('.feature-category').forEach(category => {
+            category.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            });
+            
+            category.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
+            });
+        });
+
+        // Add click tracking for demo URL
+        document.querySelector('.demo-url a').addEventListener('click', function() {
+            console.log('Demo URL clicked - tracking engagement');
+        });
+    </script>
+</body>
+</html>
