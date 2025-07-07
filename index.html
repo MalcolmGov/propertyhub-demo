@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyHub Demo - Next-Generation Real Estate Platform</title>
+    <meta name="description" content="Experience PropertyHub's advanced real estate platform with AI-powered search, property valuation, and comprehensive management tools designed for Property24 and South African real estate companies.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1a202c;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .property24-logo {
+            display: inline-flex;
+            align-items: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        .property24-logo .blue-part {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-right: 6px;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .property24-logo .red-part {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .demo-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e2e8f0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0066cc 0%, #dc2626 100%);
+        }
+
+        .demo-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: #1a202c;
+            font-weight: 700;
+        }
+
+        .demo-section p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .demo-url {
+            background: linear-gradient(135deg, #0066cc 0%, #dc2626 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.3);
+        }
+
+        .demo-url a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .demo-url a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #0066cc 0%, #dc2626 100%);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: #0066cc;
+        }
+
+        .feature-card h3 {
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 24px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 24px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .contact-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .property24-logo {
+                font-size: 2.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .demo-section {
+                padding: 30px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="property24-logo">
+            <span class="blue-part">property</span>
+            <span class="red-part">24</span>
+        </div>
+        <h1>PropertyHub Platform</h1>
+        <p>Next-Generation Real Estate Technology Solutions</p>
+    </div>
+
+    <div class="container">
+        <div class="demo-section">
+            <h2>🚀 Experience PropertyHub Live</h2>
+            <p>
+                Discover PropertyHub's advanced features with authentic South African property data, 
+                AI-powered search capabilities, and comprehensive Property24 branding integration.
+            </p>
+            
+            <div class="demo-url">
+                <p style="margin-bottom: 20px; font-size: 1.1rem; opacity: 0.9;">Access Full Interactive Demo:</p>
+                <a href="https://7471d8d3-559e-4e14-befc-5004ace8138a-00-4mbsgg6vx5zt.worf.replit.dev" target="_blank">
+                    Launch PropertyHub Demo Platform →
+                </a>
+                <p style="margin-top: 20px; font-size: 1rem; opacity: 0.8;">
+                    Complete platform with AI search, admin dashboard, virtual tours, and business tools
+                </p>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h3 style="font-size: 2.2rem; margin-bottom: 20px;">Platform Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <p>South African Brands</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <p>Properties Listed</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <p>AI Assistant</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🤖 AI-Powered Property Search</h3>
+                <p>Revolutionary natural language search with voice recognition. Ask "Find me a family home under R3M in Centurion" and get instant, intelligent results with market analysis.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🏠 Smart Property Valuation</h3>
+                <p>Real-time property valuations using advanced machine learning algorithms. Live market updates with percentage changes, trend indicators, and comparative market analysis.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📊 Advanced Admin Dashboard</h3>
+                <p>Comprehensive property management with sales performance tracking, agent leaderboards, detailed analytics, and business intelligence tools for executives.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌐 Virtual Reality Tours</h3>
+                <p>Immersive AR property tours with spatial audio experiences. Explore properties room-by-room with realistic ambient sounds and interactive information overlays.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📱 WhatsApp Business Integration</h3>
+                <p>Direct property inquiries through WhatsApp Business API. Instant communication with pre-filled property details for immediate follow-up and lead conversion.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📄 Automated Property Reports</h3>
+                <p>Professional property reports with comprehensive market analysis, comparable sales data, municipal valuations, and legal documentation. Generate reports instantly.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔗 Enterprise Integrations</h3>
+                <p>Seamless connections with Google Analytics, Facebook Lead Ads, email marketing platforms, CRM systems, and payment processing for complete business automation.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎨 Multi-Brand White-Label</h3>
+                <p>Professional white-label platform supporting multiple South African real estate brands with authentic logos, custom colors, and personalized user experiences.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Ready to Transform Real Estate Technology?</h3>
+            <p>
+                PropertyHub represents the future of South African real estate platforms. 
+                Experience the full demo to see how we can revolutionize Property24's digital presence and user engagement.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>📧 Business Inquiries</h4>
+                    <p>partnerships@propertyhub.co.za</p>
+                </div>
+                <div class="contact-card">
+                    <h4>📱 WhatsApp Demo</h4>
+                    <p>+27 11 555 PROP</p>
+                </div>
+                <div class="contact-card">
+                    <h4>💻 Technical Documentation</h4>
+                    <p>docs.propertyhub.co.za</p>
+                </div>
+                <div class="contact-card">
+                    <h4>🏢 Property24 Partnership</h4>
+                    <p>property24@propertyhub.co.za</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Professional animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth fade-in animation for feature cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const fadeInObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Apply animation to all feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(40px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                fadeInObserver.observe(card);
+            });
+
+            // Counter animation for stats
+            const animateCounters = () => {
+                document.querySelectorAll('.stat-number').forEach(counter => {
+                    const target = counter.textContent;
+                    const numericValue = parseInt(target.replace(/[^\d]/g, ''));
+                    const suffix = target.replace(/[\d]/g, '');
+                    
+                    if (numericValue) {
+                        let current = 0;
+                        const increment = numericValue / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= numericValue) {
+                                counter.textContent = numericValue + suffix;
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current) + suffix;
+                            }
+                        }, 50);
+                    }
+                });
+            };
+
+            // Trigger counter animation when stats section is visible
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+
+            // Track demo link clicks for analytics
+            document.querySelector('.demo-url a').addEventListener('click', function() {
+                console.log('PropertyHub Demo accessed from GitHub Pages');
+                // Add analytics tracking here if needed
+            });
+
+            // Enhanced hover effects
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.borderColor = '#0066cc';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.borderColor = '#e2e8f0';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
